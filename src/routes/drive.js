@@ -28,6 +28,7 @@ router.post('/upload', auth, upload.single('file'), async (req, res) => {
     }
 
     let file = db.prepare('SELECT id, ref_count FROM files WHERE hash = ?').get(hash);
+    const deduplicated = !!file;
     const uploadDir = getUploadDir();
     const finalPath = path.join(uploadDir, hash);
 
@@ -40,13 +41,13 @@ router.post('/upload', auth, upload.single('file'), async (req, res) => {
       db.prepare('UPDATE files SET ref_count = ref_count + 1 WHERE id = ?').run(file.id);
     }
 
-    db.prepare('INSERT INTO user_files (user_id, file_id, original_name) VALUES (?, ?, ?)').run(
+    const link = db.prepare('INSERT INTO user_files (user_id, file_id, original_name) VALUES (?, ?, ?)').run(
       req.user.id, file.id, req.file.originalname
     );
     db.prepare('UPDATE users SET used_bytes = used_bytes + ? WHERE id = ?').run(size, req.user.id);
 
     cache.del(`drive:${req.user.id}`);
-    res.json({ hash, size, name: req.file.originalname, deduplicated: !!file.ref_count && file.ref_count > 1 });
+    res.json({ id: Number(link.lastInsertRowid), hash, size, name: req.file.originalname, deduplicated });
   } catch (err) {
     console.error(err);
     if (req.file && fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
@@ -64,7 +65,7 @@ router.get('/list', auth, (req, res) => {
   const db = getDb();
   try {
     const rows = db.prepare(`
-      SELECT uf.original_name, f.hash, f.size, f.mime, uf.created_at
+      SELECT uf.id, uf.original_name, f.hash, f.size, f.mime, uf.created_at
       FROM user_files uf
       JOIN files f ON f.id = uf.file_id
       WHERE uf.user_id = ?
@@ -72,6 +73,63 @@ router.get('/list', auth, (req, res) => {
     `).all(req.user.id);
     cache.set(key, rows);
     res.json(rows);
+  } finally {
+    db.close();
+  }
+});
+
+// Download one of the caller's files (id = user_files.id from /list)
+router.get('/download/:id', auth, (req, res) => {
+  const db = getDb();
+  try {
+    const row = db.prepare(`
+      SELECT uf.original_name, f.hash, f.mime
+      FROM user_files uf JOIN files f ON f.id = uf.file_id
+      WHERE uf.id = ? AND uf.user_id = ?
+    `).get(req.params.id, req.user.id);
+    if (!row) return res.status(404).json({ error: 'File not found' });
+
+    const filePath = path.join(getUploadDir(), row.hash);
+    if (!fs.existsSync(filePath)) return res.status(404).json({ error: 'File missing from storage' });
+    if (row.mime) res.type(row.mime);
+    res.download(filePath, row.original_name || row.hash);
+  } finally {
+    db.close();
+  }
+});
+
+// Remove one of the caller's files; the stored blob is deleted once nobody references it
+router.delete('/:id', auth, (req, res) => {
+  const db = getDb();
+  try {
+    const row = db.prepare(`
+      SELECT uf.id, uf.file_id, f.hash, f.size
+      FROM user_files uf JOIN files f ON f.id = uf.file_id
+      WHERE uf.id = ? AND uf.user_id = ?
+    `).get(req.params.id, req.user.id);
+    if (!row) return res.status(404).json({ error: 'File not found' });
+
+    let orphan = false;
+    db.transaction(() => {
+      db.prepare('DELETE FROM user_files WHERE id = ?').run(row.id);
+      db.prepare('UPDATE users SET used_bytes = MAX(0, used_bytes - ?) WHERE id = ?').run(row.size, req.user.id);
+      db.prepare('UPDATE files SET ref_count = ref_count - 1 WHERE id = ?').run(row.file_id);
+      const left = db.prepare('SELECT ref_count FROM files WHERE id = ?').get(row.file_id);
+      if (left && left.ref_count <= 0) {
+        db.prepare('DELETE FROM files WHERE id = ?').run(row.file_id);
+        orphan = true;
+      }
+    })();
+
+    if (orphan) {
+      const filePath = path.join(getUploadDir(), row.hash);
+      if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+    }
+    cache.del(`drive:${req.user.id}`);
+    res.json({ ok: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Delete failed' });
   } finally {
     db.close();
   }

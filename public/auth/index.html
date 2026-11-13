@@ -117,11 +117,11 @@ input { padding-inline: 1.2em; }
         <section class="step" id="s1">
           <h1 id="h1"></h1>
           <p class="sub" id="sub1"></p>
-          <button type="button" class="btn btn-g" id="google">
+          <button type="button" class="btn btn-g" id="google" hidden style="display:none">
             <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.2 5.5-4.7 7.2l7.6 5.9c4.4-4.1 6.9-10.1 6.9-17.6z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.9c-2.1 1.4-4.9 2.3-8.3 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>
             <span id="gtxt"></span>
           </button>
-          <div class="or">or</div>
+          <div class="or" hidden style="display:none">or</div>
           <form id="f1" novalidate>
             <label>Email
               <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
@@ -178,9 +178,16 @@ input { padding-inline: 1.2em; }
     signup: '/api/auth/signup', 
     login: '/api/auth/login', 
     google: '/api/auth/google', 
-    next: window.location.origin + '/dashboard' 
+    next: nextUrl()
   };
   var $ = function (id) { return document.getElementById(id); };
+  /* Where to go after auth: ?next=/some/path on this site, else the dashboard */
+  function nextUrl() {
+    var n = new URLSearchParams(location.search).get('next');
+    return (n && /^\/(?!\/)/.test(n)) ? n : '/dashboard';
+  }
+  /* Already signed in? Skip straight to the dashboard */
+  try { if (localStorage.getItem('webever.token')) { location.replace(nextUrl()); } } catch (e) {}
   var T = {
     signup: { title: 'Create your account | Webever Labs', h1: 'Create your account', sub1: 'Build hybrid software and run research. 1 GB of Auxa Cloud is free.', g: 'Sign up with Google', swap: 'Already have an account?', swapBtn: 'Log in', h2: 'Finish your account', sub2: 'Add your name and a password to get started.', go: 'Create account', ac: 'new-password' },
     login: { title: 'Log in | Webever Labs', h1: 'Welcome back', sub1: 'Log in to pick up where you left off.', g: 'Log in with Google', swap: 'New to Webever?', swapBtn: 'Create an account', h2: 'Enter your password', sub2: 'Log in to continue.', go: 'Log in', ac: 'current-password' }
@@ -202,7 +209,7 @@ input { padding-inline: 1.2em; }
     $('nameWrap').hidden = m === 'login'; $('pwHint').hidden = m === 'login'; $('forgot').hidden = m === 'signup'; $('legal').hidden = m === 'login';
     $('pw').setAttribute('autocomplete', t.ac);
     $('msg1').textContent = ''; $('msg2').textContent = '';
-    if (push) { try { history.replaceState(null, '', location.pathname + '?s=' + m); } catch (e) {} }
+    if (push) { try { var q = new URLSearchParams(location.search); q.set('s', m); history.replaceState(null, '', location.pathname + '?' + q.toString()); } catch (e) {} }
   }
   $('swapBtn').addEventListener('click', function () { render(mode === 'signup' ? 'login' : 'signup', true); show(1); });
   window.addEventListener('popstate', function () { render(read(), false); show(1); });
@@ -247,8 +254,13 @@ input { padding-inline: 1.2em; }
       return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; });
     }).then(function (res) {
       if (!res.ok) throw new Error((res.d && res.d.error) || 'Something went wrong. Please try again.');
+      if (!res.d || !res.d.token) throw new Error('Server did not return a session. Please try again.');
+      try {
+        localStorage.setItem('webever.token', res.d.token);
+        localStorage.setItem('webever.user', JSON.stringify(res.d.user || {}));
+      } catch (e) { throw new Error('Your browser blocked saving the session. Enable site storage and try again.'); }
       say('msg2', mode === 'signup' ? 'Account created. Redirecting...' : 'Logged in. Redirecting...', true);
-      setTimeout(function () { location.href = CFG.next; }, 600);
+      setTimeout(function () { location.href = CFG.next; }, 400);
     }).catch(function (err) {
       say('msg2', err && err.message && err.message !== 'Failed to fetch' ? err.message : 'Could not reach the server. Check your connection and try again.');
       btn.disabled = false; btn.textContent = label;

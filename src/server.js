@@ -56,6 +56,11 @@ app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/auth.html'));
 });
 
+// Dashboard (client-side guard redirects to /login when signed out)
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/dashboard.html'));
+});
+
 // Health
 app.get('/health', (req, res) => res.json({ ok: true }));
 
