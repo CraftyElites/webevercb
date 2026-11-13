@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
-<script>try{if(!localStorage.getItem("webever.token"))location.replace("/login?s=login")}catch(e){}</script>
+<script>try{var t=localStorage.getItem("webever.token");if(!t&&!/dashboard\.html$/i.test(location.pathname)&&location.protocol!=="file:")location.replace("/login?s=login")}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>Auxa Cloud</title>
@@ -2238,7 +2238,7 @@ emit("project.created",{id:p.id,name:n,services:svcs});
 A.close();
 M.fid=fo.id;
 go("drive");
-}
+},
 async delProject(id){
   const p=D.projects.find(x=>x.id==id);
   if(!p)return;
