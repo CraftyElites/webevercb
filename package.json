@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "init-db": "node src/utils/init-db.js"
+    "init-db": "node src/utils/init-db.js",
+    "boot": "node src/utils/init-db.js && node src/server.js"
   },
   "engines": {
     "node": ">=18"
