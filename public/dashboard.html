@@ -17,7 +17,7 @@
 html,body{height:100%}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{font:14.5px/1.5 var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow:hidden}
+body{font:11.6px/1.5 var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow:hidden}
 button,input,textarea,select{font:inherit;color:inherit;background:none;border:0;outline:0}button{cursor:pointer}
 h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.02em;line-height:1.15;font-weight:600}
 :focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -67,7 +67,7 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .note{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line2);border-radius:var(--r3);padding:12px 16px;margin-bottom:16px;color:var(--muted);font-size:.88rem}.note .i{margin-top:2px;color:var(--warn)}
 .row{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.row .t{flex:1;min-width:0}.row .t b{display:block;font-weight:600}.row .t span{color:var(--muted);font-size:.84rem}
 .tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.tl{background:var(--panel);border:1px solid var(--line);border-radius:var(--r2);padding:16px;text-align:left;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,background .15s}.tl:hover{border-color:var(--line2);background:var(--raised)}.tl b{font:600 1rem var(--display)}.tl p{color:var(--muted);font-size:.86rem}.tl .tp{display:flex;justify-content:space-between;align-items:center}
+.tl{background:var(--raised);border:1px solid var(--line2);border-radius:14px;padding:12px;text-align:left;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,background .15s;box-shadow:0 0 0 1px rgba(255,255,255,.03)}.tl:hover{border-color:var(--line2);background:var(--raised)}.tl b{font:600 1rem var(--display)}.tl p{color:var(--muted);font-size:.86rem}.tl .tp{display:flex;justify-content:space-between;align-items:center}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 .dif{display:grid;grid-template-columns:340px minmax(0,1fr);gap:14px;align-items:start}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;align-items:start}
@@ -84,7 +84,7 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .fw{margin-top:14px}.fw:first-child{margin-top:0}.fw>label.f{margin:0 0 6px}
 .hero{position:relative;overflow:hidden;isolation:isolate;border:1px solid var(--line);border-radius:var(--r1);padding:64px 44px;background:#0d0d0d;margin-bottom:14px}
 .hero::after{content:"";position:absolute;inset:0;background:rgba(11,11,11,.38);z-index:-1}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;z-index:-2;animation:drift 20s ease-in-out infinite alternate}
+.blob{display:none!important}
 .b1{width:380px;height:380px;background:#f2a93b;left:-90px;top:-120px}.b2{width:320px;height:320px;background:#ff6b5e;right:14%;top:-40px;animation-delay:-7s}.b3{width:340px;height:340px;background:#2fbf84;right:-70px;bottom:-130px;animation-delay:-13s}
 @keyframes drift{to{transform:translate(50px,36px) scale(1.14)}}
 .hin{position:relative;max-width:720px}.hin h1{font-size:clamp(2.2rem,5.2vw,3.7rem);line-height:1.04;letter-spacing:-.035em;margin:16px 0 14px}.hin p{color:#cfcfcf;font-size:1.05rem;max-width:56ch}
@@ -104,7 +104,7 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .prof .pt{min-width:0}.prof .pt b{display:block;font-weight:600;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.prof .pt span{font-size:.78rem;color:var(--muted)}
 .ubav{position:relative;width:var(--s,48px);height:var(--s,48px);border-radius:40%;padding:3px;background:var(--bg);border:1px solid var(--line);flex:none}
 .ubav .in{position:relative;width:100%;height:100%;border-radius:40%;overflow:hidden;isolation:isolate;background:#000;display:grid;place-items:center;font:700 .95rem var(--display);color:#fff}
-.ubav .in i{position:absolute;border-radius:50%;filter:blur(9px);z-index:-2}.ubav .in i:nth-child(1){width:70%;height:70%;background:#f2a93b;left:-18%;top:-18%}.ubav .in i:nth-child(2){width:62%;height:62%;background:#ff6b5e;right:-16%;bottom:-14%}.ubav .in i:nth-child(3){width:45%;height:45%;background:#2fbf84;right:4%;top:-12%}
+.ubav .in i{display:none!important}.ubav .in i:nth-child(1){width:70%;height:70%;background:#f2a93b;left:-18%;top:-18%}.ubav .in i:nth-child(2){width:62%;height:62%;background:#ff6b5e;right:-16%;bottom:-14%}.ubav .in i:nth-child(3){width:45%;height:45%;background:#2fbf84;right:4%;top:-12%}
 .ubav .in::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.38);z-index:-1}.ubav .in img{width:100%;height:100%;object-fit:cover}
 .ubav .dot2{position:absolute;right:-4px;bottom:-4px;width:40%;max-width:24px;aspect-ratio:1;border-radius:50%;background:#000;border:3px solid var(--bg);display:grid;place-items:center;color:#fff;transition:transform .25s}.ubav .dot2 .i{width:55%;height:55%;stroke-width:3}.prof:hover .dot2{transform:rotate(45deg)}
 .bk{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:13px;color:var(--muted);font-weight:500;width:100%}.bk:hover{background:var(--panel);color:var(--ink)}
@@ -410,7 +410,7 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .hdr-menu button:hover{background:var(--raised)}
 
 .dub-wrap{position:relative;margin:0 0 16px;overflow:visible}
-.dub-blobs{position:absolute;left:-8%;right:-8%;top:-40px;bottom:-10%;z-index:0;pointer-events:none;opacity:.72}
+.dub-blobs{display:none!important}
 .dub-blobs .db{position:absolute;border-radius:50%;filter:blur(40px)}
 .dub-blobs .db1{width:50%;aspect-ratio:1;left:0;top:0;background:radial-gradient(circle,#7aabff 0%,#5b8cff 35%,transparent 70%)}
 .dub-blobs .db2{width:42%;aspect-ratio:1;right:0;top:20px;background:radial-gradient(circle,#ff8fc8 0%,#ff6bb5 35%,transparent 70%)}
@@ -712,6 +712,27 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 @media(min-width:900px){.dif-layout{grid-template-columns:1.2fr .9fr;align-items:start}}
 .diff-qa{border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;background:var(--raised)}.diff-build{margin:14px 0}.sbp-hero-split{display:grid;gap:16px}@media(min-width:700px){.sbp-hero-split{grid-template-columns:1.1fr .9fr;align-items:center}}.sbp-hero-art{min-height:120px;border-radius:16px;background:linear-gradient(135deg,#1a2740,#2a1850)}.sbp-feat-list .sbp-list-row{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}.sbp-nav-min{opacity:.9}.sbp-logos-muted i{opacity:.4}.sbp-cta-center{text-align:center}.sbp-quotes-plain blockquote{background:transparent;border:0;padding:8px 0}.sbp-nav-links{display:flex;gap:12px;flex-wrap:wrap;opacity:.8}
 .wurl-chat{position:fixed;right:16px;bottom:16px;width:min(300px,90vw);background:#12151c;border:1px solid #2a3140;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;z-index:5;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+
+/* size + ubs + preview + labs polish */
+.ph h1{font-size:1.32rem}
+.card{padding:16px;border-radius:18px}
+.card h3{font-size:.95rem}
+.sub{font-size:.78rem}
+.kv{font-size:1.5rem}
+.btn{padding:7px 14px;font-size:.88rem}
+.nav{padding:6px 10px;font-size:.9rem}
+.grp{font-size:.68rem}
+.side{width:220px}
+#view{padding:20px 22px 48px}
+.ubs-card,.ubs{padding:12px!important;border-width:1px!important;border-color:var(--line2)!important;background:var(--raised)!important;border-radius:14px!important;box-shadow:0 0 0 1px rgba(255,255,255,.04)}
+.file-preview{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px;max-height:420px;overflow:auto}
+.file-preview pre{white-space:pre-wrap;word-break:break-word;font:12px/1.5 var(--mono);margin:0}
+.file-preview .big-skip{color:var(--muted);padding:24px;text-align:center}
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.lab-card{background:var(--raised);border:1px solid var(--line2);border-radius:14px;padding:14px}
+.lab-card h3{font-size:.95rem;margin-bottom:6px}
+.flow-step{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.flow-step:last-child{border-bottom:0}
 </style>
 </head>
 <body>
@@ -886,7 +907,7 @@ const PL={starter:{n:"Starter",price:"Free",gb:1,proj:3,d:"For solo builders tes
 const IND=["Fintech","Healthcare","Education","Retail","Logistics","Media","Real estate","Agriculture","Other"];
 const CONN=[["gdrive","Google Drive","Storage","folder"],["dropbox","Dropbox","Storage","cloud"],["onedrive","OneDrive","Storage","cloud"],["github","GitHub","Source","code"],["eas","Expo EAS","Builds","rocket"],["paystack","Paystack","Payments","card"],["flutterwave","Flutterwave","Payments","card"],["slack","Slack","Notifications","chat"],["intercom","Intercom","Live chat","chat"],["hubspot","HubSpot","CRM contact","users"],["zendesk","Zendesk","Support desk","mail"],["whatsapp","WhatsApp Business","Contact","chat"]];
 const STG=["Bundling web assets","Packaging native shell","Signing"];
-const NAV=[["overview","Overview","home"],["room","My room","door"],["g","Build"],["projects","Projects","cube"],["builds","Builds","rocket"],["g","Create"],["diffusion","Diffusion","palette"],["g","Research"],["research","Research","spark"],["seo","SEO & growth","trend"],["g","Auxa Cloud"],["drive","Drive","folder"],["conn","Connections","plug"],["g","Auxobus"],["tools","All tools","grid"],["story","Storytelling","spark"],["site","Site builder","grid"],["g","Connect"],["webhooks","Webhooks","link"],["mcp","MCP","net"],["api","API","term"],["g","Workspace"],["team","Team","users"],["billing","Billing","card"]];
+const NAV=[["overview","Overview","home"],["room","My room","door"],["g","Build"],["projects","Projects","cube"],["builds","Builds","rocket"],["g","Create"],["diffusion","Diffusion","palette"],["g","Research"],["research","Research","spark"],["seo","SEO & growth","trend"],["g","Auxa Cloud"],["drive","Drive","folder"],["conn","Connections","plug"],["g","Auxobus"],["tools","All tools","grid"],["qa","Quality test lab","bolt"],["flows","Platform flow lab","grid"],["story","Storytelling","spark"],["site","Site builder","grid"],["g","Connect"],["webhooks","Webhooks","link"],["mcp","MCP","net"],["api","API","term"],["g","Workspace"],["team","Team","users"],["billing","Billing","card"]];
 
 /* ================= helpers ================= */
 const fmt=b=>b>=1e9?(b/1e9).toFixed(1)+" GB":b>=1e6?(b/1e6).toFixed(1)+" MB":Math.max(1,Math.round(b/1e3))+" KB";
@@ -1068,7 +1089,18 @@ const sharedOf=id=>path(id).some(x=>x.shared||x.project);
 const folderOpts=sel=>`<option value="">My Drive</option>`+D.folders.map(f=>`<option value="${f.id}" ${f.id==sel?"selected":""}>${esc(path(f.id).map(x=>x.n).join(" / "))}</option>`).join("");
 function ensureFolders(){
   if(!D.folders.some(f=>f.n==="WURLS"&&!f.parent)){D.folders.unshift({id:"wurls-root",n:"WURLS",parent:null,project:null,shared:true,readonly:true})}
-D.projects.forEach(q=>{if(!q.folder||!D.folders.find(f=>f.id==q.folder)){const f={id:rid(10),n:q.n,parent:null,project:q.id,shared:true};D.folders.push(f);q.folder=f.id}q.created=q.created||Date.now()});store()}
+  D.projects.forEach(q=>{
+    if(!q.folder||!D.folders.find(f=>f.id==q.folder)){
+      const f={id:rid(10),n:q.n,parent:null,project:q.id,shared:true};
+      D.folders.push(f);q.folder=f.id;
+      if(!D.folders.some(x=>x.parent===f.id&&x.n==="env"))D.folders.push({id:rid(10),n:"env",parent:f.id,project:q.id,shared:true});
+      (q.services||["sitefiles"]).forEach(s=>{if(!D.folders.some(x=>x.parent===f.id&&x.n===s))D.folders.push({id:rid(10),n:s,parent:f.id,project:q.id,shared:true})});
+    }
+    q.created=q.created||Date.now();
+    q.kind=q.kind||"group";
+  });
+  store();
+}
 const bindSearch=(id,key)=>{const q=$("#"+id);if(!q)return;q.oninput=()=>{M[key]=q.value;const p=q.selectionStart;render();const n=$("#"+id);if(n){n.focus();n.setSelectionRange(p,p)}}};
 const FOLDER=(c,sh)=>{
   const deep=c||"#c47a00";
@@ -1089,6 +1121,35 @@ return`<svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true"><rect 
 };
 
 const line=d=>{const w=640,h=190,p=26,m=Math.max(...d,1),n=d.length,x=i=>p+i*(w-2*p)/Math.max(1,n-1),y=v=>h-p-v/m*(h-2*p-8),pt=d.map((v,i)=>[x(i),y(v)]),ln=pt.map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1)).join(" ");return`<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Chart">${[0,1,2].map(i=>`<line x1="${p}" x2="${w-p}" y1="${p+i*(h-2*p)/2}" y2="${p+i*(h-2*p)/2}" stroke="#262626"/>`).join("")}<text x="2" y="${p+4}" fill="#8d8d8d" font-size="11">${m}</text><path d="${ln} L${x(n-1)} ${h-p} L${x(0)} ${h-p}Z" fill="#ececec" fill-opacity=".07"/><path d="${ln}" fill="none" stroke="#ececec" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>${n<=14?pt.map((q,i)=>`<circle cx="${q[0]}" cy="${q[1]}" r="${i==n-1?4.5:3}" fill="#0b0b0b" stroke="#ececec" stroke-width="2"><title>${d[i]}</title></circle>`).join(""):""}<text x="${p}" y="${h-6}" fill="#8d8d8d" font-size="11">${n} days ago</text><text x="${w-p}" y="${h-6}" fill="#8d8d8d" font-size="11" text-anchor="end">Today</text></svg>`};
+
+const PREVIEW_MAX = 256 * 1024; // 256KB text preview limit
+function kindOfName(n){n=(n||"").toLowerCase();if(/\.(png|jpe?g|gif|webp|bmp|svg)$/.test(n))return"image";if(/\.(mp4|webm|mov|m4v)$/.test(n))return"video";if(/\.(pdf)$/.test(n))return"pdf";if(/\.(txt|md|json|js|ts|css|html?|xml|csv|env|log|yml|yaml|toml|py|go|rs|java|c|cpp|h|sh|sql)$/.test(n))return"text";return"bin"}
+async function previewFile(f){
+  const name=f.name||f.original_name||"file";
+  const size=f.size||0;
+  const k=kindOfName(name);
+  let body="";
+  if(k==="image"){
+    const url=(f instanceof Blob)?(f._u||(f._u=URL.createObjectURL(f))):(f.url||"");
+    body=`<img src="${esc(url)}" style="max-width:100%;border-radius:12px" alt="">`;
+  } else if(k==="text"){
+    if(size > PREVIEW_MAX){
+      body=`<div class="big-skip"><b>File is large (${fmt(size)})</b><p class="sub">Text preview skipped to keep the UI fast.</p><button class="btn s mt" data-a="downloadOne" data-x="${F.indexOf(f)}">Download</button></div>`;
+    } else {
+      try{
+        let text="";
+        if(f instanceof Blob) text=await f.text();
+        else if(f.url) text=await (await fetch(f.url)).text();
+        else if(WV.on && f.id){const b=await WV.blob(f);text=await b.text()}
+        else text="(no local content)";
+        body=`<pre>${esc(text.slice(0,80000))}</pre>`;
+      }catch(e){body=`<p class="sub">Could not read text: ${esc(e.message||"error")}</p>`}
+    }
+  } else {
+    body=`<div class="big-skip"><b>${esc(name)}</b><p class="sub">${k.toUpperCase()} · ${fmt(size)} — binary or unsupported preview</p><button class="btn s mt" data-a="downloadOne" data-x="${F.indexOf(f)}">Download</button></div>`;
+  }
+  modal("Preview · "+esc(name), `<div class="file-preview">${body}</div><div class="pa mt"><button class="btn g" data-a="close">Close</button><button class="btn" data-a="downloadOne" data-x="${F.indexOf(f)}">Download</button></div>`);
+}
 function driveHTML(base,rootName){const cf=M.fid||null,q=(M.dq||"").toLowerCase(),view=M.dv||"grid",fo=D.folders.filter(f=>(f.parent||null)==cf&&f.n.toLowerCase().includes(q)),fl=F.filter(f=>(f.folder||null)==cf&&f.name.toLowerCase().includes(q)),pth=path(cf),sub=pth.slice(base?pth.findIndex(x=>x.id==base)+1:0);
  const cr=`<div class="crumbs"><button data-a="crumb" data-x="${base||"root"}">${esc(rootName)}</button>${sub.map((x,i)=>`<span class="sep">/</span>${i==sub.length-1?`<b>${esc(x.n)}</b>`:`<button data-a="crumb" data-x="${x.id}">${esc(x.n)}</button>`}`).join("")}</div>`;
  const bar=`<div class="drive-head">
@@ -1096,7 +1157,7 @@ function driveHTML(base,rootName){const cf=M.fid||null,q=(M.dq||"").toLowerCase(
   <div class="drive-toolbar">
     <div class="drive-search"><svg class="i"><use href="#search"/></svg><input class="inp" id="dq" placeholder="Search in Drive" value="${esc(M.dq||"")}"></div>
     <div class="seg drive-seg"><button class="${view=="grid"?"on":""}" data-a="dview" data-x="grid" aria-label="Grid">${ic("grid")}</button><button class="${view=="list"?"on":""}" data-a="dview" data-x="list" aria-label="List">${ic("rows")}</button></div>
-    <div class="drive-actions"><button class="btn g s" data-a="newFolder">${ic("plus")}New</button><button class="btn s" data-a="upload">${ic("up")}Upload</button></div>
+    <div class="drive-actions"><button class="btn g s" data-a="newFolder">${ic("plus")}Folder</button><button class="btn g s" data-a="newProject">${ic("cube")}Project</button><button class="btn s" data-a="upload">${ic("up")}Upload</button></div>
   </div>
 </div>`;
  const thumb=f=>f instanceof Blob?(f._u||(f._u=URL.createObjectURL(f))):f.url;
@@ -1729,6 +1790,61 @@ team(){const ok=["pro","enterprise"].includes(D.plan);return ph("Team","")+`<div
 
 billing(){const p=PL[D.plan];return ph("Billing","Priced in naira.")+`<div class="grid" style="margin-bottom:14px"><div class="card c6"><span class="sub">Projects</span><b class="kv">${D.projects.length} / ${p.proj>1e6?"unlimited":p.proj}</b></div><div class="card c6"><span class="sub">Auxa Drive</span><b class="kv">${fmt(used())} / ${p.gb>=1e3?"custom":p.gb+" GB"}</b></div></div><div class="grid">${Object.entries(PL).map(([k,x])=>`<div class="card c3"><div class="ph" style="margin-bottom:6px"><h3>${x.n}</h3>${k==D.plan?`<span class="chip ok">current</span>`:""}</div><b class="kv" style="font-size:1.4rem">${x.price}</b><p class="sub">${x.d}</p><ul style="list-style:none;margin:14px 0;display:flex;flex-direction:column;gap:6px;font-size:.88rem">${x.f.map(f=>`<li>${ic("check","")} ${f}</li>`).join("")}</ul><button class="btn ${k==D.plan?"g":""}" style="width:100%" data-a="plan" data-x="${k}" ${k==D.plan||WV.on?"disabled":""}>${k==D.plan?"Current plan":WV.on?"Not available yet":"Switch"}</button></div>`).join("")}</div><p class="sub mt">${WV.on?"Your plan and storage limit come from your account on the server. Paid upgrades are not open yet.":"Preview: switching plans does not bill you."}</p>`}
 };
+
+VW.qa=function(){
+  return ph("Quality test lab","Probe security headers, CORS, methods, reflection, and run a controlled stress sample against your endpoints.",
+    `<button class="btn s" data-a="qaRun">Run checks</button>`)+`
+  <div class="note">${ic("warn")}<div>Only test sites and APIs you own or have permission to load-test. Concurrency is capped server-side.</div></div>
+  <div class="grid">
+    <div class="card c6">
+      <h3>Target</h3>
+      <label class="f">Base URL</label>
+      <input class="inp" id="qa_url" placeholder="https://api.yoursite.com/v1/health" value="${esc(M.qaUrl||"")}">
+      <label class="f">Checks</label>
+      <div class="chips" id="qa_checks">
+        ${[["headers","Headers"],["cors","CORS"],["methods","Methods"],["injection","Reflection"],["auth","Auth gate"]].map(([k,l])=>`<button class="pill ${(M.qaChecks||["headers","cors","methods"]).includes(k)?"on":""}" data-a="qaToggle" data-x="${k}">${l}</button>`).join("")}
+      </div>
+      <label class="f mt">Stress (optional)</label>
+      <div class="two">
+        <div><label class="f">Concurrency</label><input class="inp" id="qa_cc" type="number" min="1" max="25" value="${M.qaCc||5}"></div>
+        <div><label class="f">Requests</label><input class="inp" id="qa_n" type="number" min="1" max="200" value="${M.qaN||20}"></div>
+      </div>
+      <button class="btn mt" data-a="qaRun" style="width:100%">Run quality + stress</button>
+    </div>
+    <div class="card c6">
+      <h3>Results</h3>
+      <div id="qa_out" class="out">${M.qaOut?esc(typeof M.qaOut==="string"?M.qaOut:JSON.stringify(M.qaOut,null,2)):"Run a test to see results here."}</div>
+    </div>
+  </div>`;
+};
+VW.flows=function(){
+  const steps=M.flowSteps||[{id:"s1",name:"Create resource",method:"POST",path:"/api/resource",type:"action"},{id:"s2",name:"Notify",method:"POST",path:"/api/notify",type:"action"}];
+  return ph("Platform flow lab","Design workflow steps for the platform you are building. Export API sketches usable from Site builder events/actions.",
+    `<button class="btn s" data-a="flowAdd">Add step</button><button class="btn g s" data-a="flowExport">Export API code</button>`)+`
+  <div class="grid">
+    <div class="card c6">
+      <label class="f">Workflow name</label>
+      <input class="inp" id="fl_name" value="${esc(M.flowName||"My platform flow")}">
+      <div class="mt" id="fl_steps">
+        ${steps.map((s,i)=>`<div class="flow-step">
+          <b style="width:28px">${i+1}</b>
+          <input class="inp" data-a="flowField" data-x="${i}" data-k="name" value="${esc(s.name)}" style="flex:1" placeholder="Step name">
+          <select class="inp" data-a="flowField" data-x="${i}" data-k="method" style="width:100px">
+            ${["GET","POST","PUT","PATCH","DELETE"].map(m=>`<option ${s.method===m?"selected":""}>${m}</option>`).join("")}
+          </select>
+          <input class="inp" data-a="flowField" data-x="${i}" data-k="path" value="${esc(s.path||"")}" style="flex:1.2" placeholder="/api/...">
+          <button class="ib" data-a="flowDel" data-x="${i}" aria-label="Remove">${ic("x")}</button>
+        </div>`).join("")}
+      </div>
+      <button class="btn mt" data-a="flowValidate" style="width:100%">Validate & sketch APIs</button>
+    </div>
+    <div class="card c6">
+      <h3>API sketch</h3>
+      <p class="sub">Paste into your backend or wire as Site builder action handlers.</p>
+      <div class="cb"><pre id="fl_out">${esc(M.flowOut||"// Validate to generate route sketches")}</pre><button class="ib" data-a="copyText" data-x="fl_out">${ic("copy")}</button></div>
+    </div>
+  </div>`;
+};
 function briefHTML(b){const d=b.d,li=a=>`<ul style="margin:8px 0 0 18px;display:flex;flex-direction:column;gap:5px">${(a||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;return`<div class="ph" style="margin-bottom:10px"><div><h3 style="font-size:1.3rem">${esc(d.title)}</h3><p class="sub">${esc(b.q)}</p></div><button class="btn g s" data-a="expBrief" data-x="${b.id}">${ic("dl")}Export</button></div><p>${esc(d.summary)}</p>${(d.market_snapshot||[]).map(m=>`<div class="row"><div class="t"><b>${esc(m.label)}</b><span style="white-space:normal">${esc(m.detail)}</span></div></div>`).join("")}<h4 class="mt">Opportunities</h4>${li(d.opportunities)}<h4 class="mt">Risks</h4>${li(d.risks)}<h4 class="mt">First steps</h4>${li(d.first_steps)}<h4 class="mt">Where to verify</h4>${li(d.search_directions)}`}
 function formHTML(t){return t.in.map(f=>{const id="f_"+f.k;let c;if(f.t=="file"||f.t=="files")c=`<div class="chips" id="${id}">${chips(f)}</div><button class="btn g s mt" data-a="devUp" data-x="${f.k}">${ic("up")}Add from device</button>`;else if(f.t=="area")c=`<textarea class="inp" id="${id}" placeholder="${esc(f.ph||"")}">${esc(f.def||"")}</textarea>`;else if(f.t=="sel")c=`<select class="inp" id="${id}">${f.opts.map(o=>`<option ${o==f.def?"selected":""}>${o}</option>`).join("")}</select>`;else if(f.t=="range")c=`<input type="range" id="${id}" min="${f.min}" max="${f.max}" value="${f.def}" oninput="this.nextElementSibling.textContent=this.value"><span class="sub">${f.def}</span>`;else if(f.t=="bool")c=`<label class="sw"><input type="checkbox" id="${id}" ${f.def?"checked":""}><i></i></label>`;else c=`<input class="inp" id="${id}" type="${f.t=="num"?"number":"text"}" value="${esc(f.def??"")}" placeholder="${esc(f.ph||"")}">`;return`<div class="fw"${f.w?` data-w="${f.w}"`:""}><label class="f">${f.l}${f.req?" *":""}</label>${c}</div>`}).join("")}
 function applyWhen(){$$(".fw[data-w]").forEach(w=>{const[k,vs]=w.dataset.w.split(":"),e=$("#f_"+k);w.style.display=e&&vs.split("|").includes(e.value)?"":"none"})}
@@ -1925,12 +2041,13 @@ sitePublish(){
   file.folder=wurls.id;
   for(let i=F.length-1;i>=0;i--){if(F[i].folder===wurls.id&&F[i].name===file.name)F.splice(i,1)}
   F.unshift(file);
+  if(WV.on){WV.upload(file).then(r=>{file.id=r.id;file.hash=r.hash;file.wv=1;toast("Saved .wurl to Auxa Drive")}).catch(e=>console.warn("wurl upload",e))}
   // Project directory real files
   if(sb.projectId){
     const p=D.projects.find(x=>x.id===sb.projectId);
     if(p){
       p.siteStack=sb.stack;p.n=sb.title;p.template=sb.template;p.accent=sb.accent;
-      const pages=D.folders.find(f=>f.parent===p.folder&&f.n==="Pages");
+      const pages=D.folders.find(f=>f.parent===p.folder&&(f.n==="sitefiles"||f.n==="Pages"));
       const seo=D.folders.find(f=>f.parent===p.folder&&f.n==="SEO");
       const assets=D.folders.find(f=>f.parent===p.folder&&f.n==="Assets");
       const put=function(folderId,name,content,type){
@@ -2085,28 +2202,43 @@ upload(){const i=document.createElement("input");i.type="file";i.multiple=true;i
 dl(i){const f=F[i];if(f.wv){WV.download(f).catch(e=>toast("Download failed: "+e.message,0))}else f.remote?window.open(f.url,"_blank"):saveOut(f.name,f)},dlName(n){const f=F.find(x=>x.name==n);if(!f)return;if(f.wv){WV.download(f).catch(e=>toast("Download failed: "+e.message,0))}else saveOut(f.name,f)},
 async del(i){const f=F.splice(+i,1)[0];if((WV.on&&f.wv||server())&&f.id)try{await (f.wv?WV.req("DELETE","/drive/"+f.id):API.req("DELETE","/v1/files/"+f.id))}catch(e){toast("Server: "+e.message,0)}if(f.wv)await WV.refresh();lg("Deleted "+f.name,"Drive");emit("file.deleted",{name:f.name});shell();render()},
 /* projects, builds */
-newProject(){if(D.projects.length>=PL[D.plan].proj)return toast("Project limit reached for your plan.",0);M.tg=["Web","Android","iOS"];M.pk="product";
-modal("New project",`<label class="f">Name</label><input class="inp" id="pn" autofocus placeholder="Working title">
-<label class="f">Project kind</label><select class="inp" id="pk"><option value="product">Product / software</option><option value="web">Website</option><option value="app">App</option><option value="film">Film / video</option><option value="production">Production</option><option value="custom">Custom</option></select>
-<label class="f">What is this for?</label><textarea class="inp" id="pd" style="min-height:72px" placeholder="Optional brief"></textarea>
-<label class="f">Industry</label><select class="inp" id="pi">${IND.map(i=>`<option>${i}</option>`).join("")}</select>
-<label class="f">Targets (software kinds)</label><div class="chips" id="pt">${["Web","Android","iOS"].map(t=>`<button class="pill on" data-a="tg" data-x="${t}">${t}</button>`).join("")}</div>
-<button class="btn mt" data-a="createProject" style="width:100%">Create project</button>`)},
+newProject(){if(D.projects.length>=PL[D.plan].proj)return toast("Project limit reached for your plan.",0);
+modal("New project",`<label class="f">Name</label><input class="inp" id="pn" autofocus placeholder="Project name">
+<label class="f">What is this for?</label><textarea class="inp" id="pd" style="min-height:72px" placeholder="Optional description — projects group services (site, storytelling, web app…)"></textarea>
+<label class="f">Services to include</label>
+<div class="chips" id="psv">
+${[["sitefiles","Site files"],["webapp","Web app"],["storytelling","Storytelling"],["research","Research"],["automation","Automation"]].map(([k,l])=>`<button class="pill on" data-a="svcToggle" data-x="${k}">${l}</button>`).join("")}
+</div>
+<p class="sub mt">Project folder holds environment info only. Each selected service gets its own subfolder under the project.</p>
+<button class="btn mt" data-a="createProject" style="width:100%">Create project</button>`),M.svcs=["sitefiles","webapp","storytelling","research","automation"]},
 
 tg(v,el){const a=M.tg,i=a.indexOf(v);i>=0?a.length>1&&a.splice(i,1):a.push(v);$$("#pt .pill").forEach(p=>p.classList.toggle("on",a.includes(p.dataset.x)))},
-async createProject(){const n=$("#pn").value.trim();if(!n)return toast("Enter a project name.",0);
-const kind=($("#pk")&&$("#pk").value)||"product";
+svcToggle(v,el){const a=M.svcs||(M.svcs=[]);const i=a.indexOf(v);if(i>=0){if(a.length>1)a.splice(i,1)}else a.push(v);$$("#psv .pill").forEach(p=>p.classList.toggle("on",a.includes(p.dataset.x)))},
+async createProject(){
+const n=$("#pn").value.trim();if(!n)return toast("Enter a project name.",0);
+const svcs=(M.svcs&&M.svcs.length)?M.svcs.slice():["sitefiles"];
 const fo={id:rid(10),n,parent:null,project:null,shared:true};
-const p={id:rid(10),n,d:($("#pd")&&$("#pd").value.trim())||"",ind:($("#pi")&&$("#pi").value)||"Other",t:kind==="product"||kind==="app"||kind==="web"?[...M.tg]:[],kind,folder:fo.id,created:Date.now()};
+const p={id:rid(10),n,d:($("#pd")&&$("#pd").value.trim())||"",ind:"Other",t:[],kind:"group",services:svcs,folder:fo.id,created:Date.now()};
 fo.project=p.id;
 await mut("folders","add",fo);
-const dirs={product:["Brief","Design","Builds","Assets"],web:["Pages","Assets","SEO"],app:["Design","Builds","Assets","Store"],film:["Script","Footage","Grades","Deliverables"],production:["Schedule","Talent","Locations","Deliverables"],custom:["Inbox","Working","Final"]};
-const tree=dirs[kind]||dirs.custom;
-for(const name of tree){await mut("folders","add",{id:rid(10),n:name,parent:fo.id,project:p.id,shared:true})}
-await mut("projects","add",p);lg("Project created",n+" · "+kind);emit("project.created",{id:p.id,name:n,kind});A.close();
-if(kind==="product"||kind==="app"||kind==="web"){try{await startBuild(p)}catch(e){}}
-A.openProject(p.id)},
-
+// Environment info folder contents are virtual markers; services become real subfolders
+await mut("folders","add",{id:rid(10),n:"env",parent:fo.id,project:p.id,shared:true});
+for(const s of svcs){
+  await mut("folders","add",{id:rid(10),n:s,parent:fo.id,project:p.id,shared:true});
+}
+// Seed a small env info artifact into Drive list (local + server when available)
+const envTxt=`# Project: ${n}\ncreated: ${new Date().toISOString()}\nservices: ${svcs.join(", ")}\n`;
+const envFile=new File([envTxt], "project.env.txt", {type:"text/plain"});
+envFile.folder=fo.id;
+F.unshift(envFile);
+if(WV.on){try{await WV.upload(envFile)}catch(e){console.warn(e)}}
+await mut("projects","add",p);
+lg("Project created",n+" · "+svcs.join(", "));
+emit("project.created",{id:p.id,name:n,services:svcs});
+A.close();
+M.fid=fo.id;
+go("drive");
+}
 async delProject(id){
   const p=D.projects.find(x=>x.id==id);
   if(!p)return;
@@ -2239,8 +2371,8 @@ if(f.project||D.projects.some(p=>p.folder===id)){toast("Delete the project from 
 if(f.shared){toast("Unshare before deleting this folder");return}
 if(F.some(x=>x.folder==id)||D.folders.some(x=>x.parent==id)){A.close();return toast("Folder isn't empty",0)}
 await mut("folders","del",{id});A.close();render()},
-imenu(i){const _f=F[i];if(_f&&/\.wurl$/i.test(_f.name||"")){A.openWurl(i);return}const f=F[+i];modal(esc(f.name),`<div class="ql" style="border:1px solid var(--line);border-radius:var(--r3);overflow:hidden">${[["Download","dl","dl"],["Move to folder","fwd","move"],["Delete","trash","del"]].map(r=>`<button data-a="imAct" data-x="${i}" data-y="${r[2]}">${ic(r[1])}${r[0]}</button>`).join("")}</div>`)},
-imAct(i,el){const a=el.dataset.y;A.close();if(a=="dl")A.dl(i);else if(a=="move")A.moveFile(i);else A.del(i)},
+imenu(i){const _f=F[i];if(_f&&/\.wurl$/i.test(_f.name||"")){A.openWurl(i);return}const f=F[+i];modal(esc(f.name),`<div class="ql" style="border:1px solid var(--line);border-radius:var(--r3);overflow:hidden">${[["Preview","search","preview"],["Download","dl","dl"],["Move to folder","fwd","move"],["Delete","trash","del"]].map(r=>`<button data-a="imAct" data-x="${i}" data-y="${r[2]}">${ic(r[1])}${r[0]}</button>`).join("")}</div>`)},
+imAct(i,el){const a=el.dataset.y;A.close();if(a=="preview"){previewFile(F[+i]);return}if(a=="dl")A.dl(i);else if(a=="move")A.moveFile(i);else A.del(i)},
 moveFile(i){modal("Move to",`<div class="ql" style="border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;max-height:340px;overflow-y:auto"><button data-a="doMove" data-x="${i}" data-y="">${ic("folder")}My Drive</button>${D.folders.map(f=>`<button data-a="doMove" data-x="${i}" data-y="${f.id}">${ic("folder")}${esc(path(f.id).map(x=>x.n).join(" / "))}</button>`).join("")}</div>`)},
 doMove(i,el){const f=F[+i],fid=el.dataset.y||null;f.folder=fid;if(server()&&f.id)API.req("PATCH","/v1/files/"+f.id,{folder:fid}).catch(()=>{});A.close();render();toast("Moved")},
 /* rooms */
@@ -2457,6 +2589,46 @@ function storyBindPicker(){
 }
 
 try{storyBindPicker()}catch(e){}
+A.preview=(i)=>{const f=F[+i];if(f)previewFile(f)};
+A.downloadOne=(i)=>{const f=F[+i];if(!f)return;if(WV.on&&f.wv)WV.download(f);else if(f instanceof Blob)saveOut(f.name,f);else if(f.url)window.open(f.url,"_blank")};
+
+A.qaToggle=(k)=>{const a=M.qaChecks||(M.qaChecks=["headers","cors","methods"]);const i=a.indexOf(k);if(i>=0)a.splice(i,1);else a.push(k);render()};
+A.qaRun=async()=>{
+  const url=($("#qa_url")&&$("#qa_url").value||"").trim();
+  if(!url)return toast("Enter a target URL",0);
+  M.qaUrl=url;M.qaCc=+$("#qa_cc").value||5;M.qaN=+$("#qa_n").value||20;
+  M.qaOut="Running…";render();
+  try{
+    let data;
+    if(WV.on||server()){
+      data=await (WV.on?WV.req("POST","/tools/qa/run",{target:url,tests:M.qaChecks||["headers","cors","methods"],stress:{concurrency:M.qaCc,requests:M.qaN}}):API.req("POST","/tools/qa/run",{target:url,tests:M.qaChecks||["headers","cors","methods"],stress:{concurrency:M.qaCc,requests:M.qaN}}));
+    }else{
+      // local fallback simulation
+      data={target:url,checks:(M.qaChecks||[]).map(n=>({name:n,ok:true,note:"Local simulation — connect server for real probes"})),stress:{concurrency:M.qaCc,requests:M.qaN,ok:M.qaN,errors:0,rps:40,latency:{p50:18,p95:42}}};
+    }
+    M.qaOut=data;render();toast("Quality run finished");
+  }catch(e){M.qaOut=String(e.message||e);render();toast("QA failed: "+(e.message||e),0)}
+};
+A.flowAdd=()=>{const s=M.flowSteps||(M.flowSteps=[]);s.push({id:rid(4),name:"New step",method:"POST",path:"/api/step",type:"action"});render()};
+A.flowDel=(i)=>{const s=M.flowSteps||[];s.splice(+i,1);render()};
+A.flowField=(i,el)=>{const s=(M.flowSteps||[])[+i];if(!s||!el)return;const k=el.dataset.k;if(k)s[k]=el.value};
+A.flowValidate=async()=>{
+  M.flowName=($("#fl_name")&&$("#fl_name").value)||"My platform flow";
+  const steps=M.flowSteps||[];
+  if(!steps.length)return toast("Add at least one step",0);
+  try{
+    if(WV.on||server()){
+      const data=await (WV.on?WV.req("POST","/tools/flows/validate",{name:M.flowName,steps}):API.req("POST","/tools/flows/validate",{name:M.flowName,steps}));
+      M.flowOut=data.apiSketch||JSON.stringify(data,null,2);
+    }else{
+      M.flowOut=steps.map(s=>`// ${s.name}\nrouter.${(s.method||"POST").toLowerCase()}('${s.path}', auth, async (req, res) => {\n  res.json({ ok: true, step: '${s.id}' });\n});`).join("\n\n");
+    }
+    render();toast("API sketch ready");
+  }catch(e){toast(e.message||"Validate failed",0)}
+};
+A.flowExport=()=>{if(!M.flowOut)return toast("Validate first",0);const b=new Blob([M.flowOut],{type:"text/plain"});addFiles([new File([b],(M.flowName||"flow").replace(/\s+/g,"-")+".api.js",{type:"text/javascript"})]);toast("Saved API sketch to Drive")};
+A.copyText=(id)=>{const el=document.getElementById(id);if(!el)return;navigator.clipboard.writeText(el.textContent||"").then(()=>toast("Copied")).catch(()=>toast("Copy failed",0))};
+
 A.signout=()=>WV.logout();
 ensureFolders();seedRooms();shell();render();API.load().then(()=>{ensureFolders();seedRooms();shell();render()});
 </script>
