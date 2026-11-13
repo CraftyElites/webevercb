@@ -172,8 +172,14 @@ input { padding-inline: 1.2em; }
 
 <script>
 (function () {
-  /* Point these at your server (api.webeverlabs.com) when it is ready */
-  var CFG = { api: 'https://api.webeverlabs.com', signup: '/auth/signup', login: '/auth/login', google: '/auth/google', next: 'https://dash.webeverlabs.com' };
+  /* Use same origin as the page (works on any hosted domain) */
+  var CFG = { 
+    api: window.location.origin, 
+    signup: '/api/auth/signup', 
+    login: '/api/auth/login', 
+    google: '/api/auth/google', 
+    next: window.location.origin + '/dashboard' 
+  };
   var $ = function (id) { return document.getElementById(id); };
   var T = {
     signup: { title: 'Create your account | Webever Labs', h1: 'Create your account', sub1: 'Build hybrid software and run research. 1 GB of Auxa Cloud is free.', g: 'Sign up with Google', swap: 'Already have an account?', swapBtn: 'Log in', h2: 'Finish your account', sub2: 'Add your name and a password to get started.', go: 'Create account', ac: 'new-password' },
