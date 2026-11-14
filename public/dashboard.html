@@ -17,7 +17,7 @@
 html,body{height:100%}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{font:11.6px/1.5 var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow:hidden}
+body{font:14.5px/1.5 var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow:hidden}
 button,input,textarea,select{font:inherit;color:inherit;background:none;border:0;outline:0}button{cursor:pointer}
 h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.02em;line-height:1.15;font-weight:600}
 :focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -42,8 +42,8 @@ h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.02em;line-height:1.15;fo
 .av-hdr{width:36px!important;height:36px!important;border-radius:40%!important;overflow:hidden;padding:0!important;background:var(--raised);border:1px solid var(--line)}
 .av-hdr .ubav{--s:34px;width:100%;height:100%;border:0;padding:0}
 .av-hdr .ubav .dot2{display:none}
-#view{flex:1;overflow-y:auto;overflow-x:hidden;padding:26px 30px 60px}
-#view>*{max-width:1280px;margin-left:auto;margin-right:auto}
+#view{flex:1;overflow-y:auto;overflow-x:hidden;padding:16px 12px 40px}
+#view>*{max-width:100%;margin-left:auto;margin-right:auto}
 .ph{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}.ph h1{font-size:1.65rem}.ph p{color:var(--muted);margin-top:4px;max-width:70ch}.pa{display:flex;gap:8px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 18px;border-radius:99px;font-weight:600;background:var(--ink);color:#0b0b0b;transition:opacity .15s,transform .1s;white-space:nowrap}.btn:hover{opacity:.88}.btn:active{transform:scale(.97)}.btn .i{width:17px;height:17px}
 .btn.g{background:none;color:var(--ink);border:1px solid var(--line2)}.btn.g:hover{background:var(--panel);opacity:1}.btn.d{background:none;color:var(--err);border:1px solid var(--line2)}.btn.s{padding:5px 13px;font-size:.84rem}.btn[disabled]{opacity:.4;pointer-events:none}
@@ -137,7 +137,7 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 @media(max-width:1100px){.cols{grid-template-columns:1fr}.wg{grid-template-columns:repeat(2,minmax(0,1fr))}.strip{flex-wrap:wrap}.strip>div{flex:1 1 40%}}
 @media(max-width:700px){.wg{grid-template-columns:1fr}.wg .w.s2{grid-column:span 1}.hero.slim{padding:22px}}
 @media(max-width:1100px){.c3{grid-column:span 6}.c4,.c5,.c6,.c7,.c8{grid-column:span 12}.dif{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
-@media(max-width:900px){.side{position:fixed;inset:0 auto 0 0;transform:translateX(-102%);width:min(290px,86vw);padding-top:calc(16px + env(safe-area-inset-top,0px))}.side.open{transform:none}.scrim.on{display:block;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:40}.mtop{display:flex}#view{padding:20px 14px 60px;overflow-x:hidden}}
+@media(max-width:900px){.side{position:fixed;inset:0 auto 0 0;transform:translateX(-102%);width:min(290px,86vw);padding-top:calc(16px + env(safe-area-inset-top,0px))}.side.open{transform:none}.scrim.on{display:block;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:40}.mtop{display:flex}#view{padding:12px 8px 40px;overflow-x:hidden}}
 @media(max-width:560px){.c3{grid-column:span 12}.sq kbd{display:none}}
 @media(max-width:700px){.gvg{grid-template-columns:1fr!important}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -182,7 +182,7 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .room-stat span{display:block;font-size:.72rem;color:var(--muted)}
 .room-stat b{display:block;font:600 1.25rem var(--display);margin-top:2px;letter-spacing:-.03em}
 .room-ubs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-bottom:14px;-webkit-overflow-scrolling:touch}
-.room-ubs .duc{flex:0 0 120px;width:120px}
+.room-ubs .duc{flex:0 0 140px;width:140px;background:transparent;border:1px solid var(--line2);border-radius:16px}
 @media(min-width:700px){.room-ubs .duc{flex-basis:140px;width:140px}}
 .fi-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
 .fi-row:last-child{border-bottom:0}
@@ -491,7 +491,7 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .site-top{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid #242a36;background:#0f1218;flex:none}
 .site-top-title{font:600 1rem var(--display);outline:none;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .site-canvas-wrap{flex:1;overflow-y:auto;padding:20px 16px 120px}
-.site-canvas{max-width:880px;margin:0 auto}
+.site-canvas{max-width:100%;margin:0}
 .site-sheet{position:absolute;left:0;right:0;bottom:0;max-height:48vh;background:#12151c;border-top:1px solid #2a3140;border-radius:20px 20px 0 0;padding:10px 14px 20px;z-index:2;box-shadow:0 -12px 40px rgba(0,0,0,.4)}
 .site-sheet[hidden]{display:none!important}
 .site-sheet-handle{width:40px;height:4px;border-radius:99px;background:#3a4252;margin:0 auto 10px}
@@ -714,16 +714,16 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .wurl-chat{position:fixed;right:16px;bottom:16px;width:min(300px,90vw);background:#12151c;border:1px solid #2a3140;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;z-index:5;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 
 /* size + ubs + preview + labs polish */
-.ph h1{font-size:1.32rem}
-.card{padding:16px;border-radius:18px}
-.card h3{font-size:.95rem}
-.sub{font-size:.78rem}
-.kv{font-size:1.5rem}
-.btn{padding:7px 14px;font-size:.88rem}
-.nav{padding:6px 10px;font-size:.9rem}
+.ph h1{font-size:1.65rem}
+.card{padding:20px;border-radius:var(--r1)}
+.card h3{font-size:1.05rem}
+.sub{font-size:.84rem}
+.kv{font-size:1.9rem}
+.btn{padding:9px 18px}
+.nav{padding:8px 12px}
 .grp{font-size:.68rem}
-.side{width:220px}
-#view{padding:20px 22px 48px}
+.side{width:248px}
+#view{padding:12px 8px 32px}
 .ubs-card,.ubs{padding:12px!important;border-width:1px!important;border-color:var(--line2)!important;background:var(--raised)!important;border-radius:14px!important;box-shadow:0 0 0 1px rgba(255,255,255,.04)}
 .file-preview{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px;max-height:420px;overflow:auto}
 .file-preview pre{white-space:pre-wrap;word-break:break-word;font:12px/1.5 var(--mono);margin:0}
@@ -733,6 +733,35 @@ pre,.cb{font:12.5px/1.6 var(--mono)}.cb{position:relative;background:#0e0e0e;bor
 .lab-card h3{font-size:.95rem;margin-bottom:6px}
 .flow-step{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .flow-step:last-child{border-bottom:0}
+
+/* full-width + stat cards + drive mobile + full preview */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0 18px}
+.stat-card{background:transparent;border:1px solid var(--line2);border-radius:16px;padding:14px 16px;text-align:left;display:flex;flex-direction:column;gap:2px;color:var(--ink)}
+.stat-card:hover{background:var(--raised);border-color:var(--ink)}
+.stat-label{font-size:.78rem;color:var(--muted);font-weight:500}
+.stat-num{font:600 1.6rem var(--display);letter-spacing:-.03em}
+.stat-sub{font-size:.74rem;color:var(--dim)}
+@media(max-width:700px){
+  .drive-toolbar{flex-direction:column;align-items:stretch;gap:10px}
+  .drive-search{width:100%}
+  .drive-actions{width:100%;justify-content:flex-end}
+  .drive-seg{align-self:flex-end}
+}
+.mod:has(.sheet.full){padding:0}
+.sheet.full{width:100%;max-width:none;height:100%;max-height:100%;border-radius:0;border:0;display:flex;flex-direction:column}
+.sheet.full .hd{flex:none}
+.sheet.full .file-preview{flex:1;max-height:none;border:0;border-radius:0;margin:0;background:transparent}
+/* labs group highlight */
+.nav.lab{border-left:2px solid var(--ok)}
+
+.flow-canvas{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.7fr);gap:14px;margin-top:14px}
+.flow-nodes{display:flex;flex-direction:column;gap:10px}
+.flow-node{background:transparent;border:1px solid var(--line2);border-radius:16px;padding:12px 14px}
+.flow-node.api{border-color:var(--ok);background:rgba(70,195,123,.06)}
+.flow-node-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.flow-node-body{margin-top:8px;display:flex;gap:6px}
+.flow-side{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+@media(max-width:800px){.flow-canvas{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -907,7 +936,7 @@ const PL={starter:{n:"Starter",price:"Free",gb:1,proj:3,d:"For solo builders tes
 const IND=["Fintech","Healthcare","Education","Retail","Logistics","Media","Real estate","Agriculture","Other"];
 const CONN=[["gdrive","Google Drive","Storage","folder"],["dropbox","Dropbox","Storage","cloud"],["onedrive","OneDrive","Storage","cloud"],["github","GitHub","Source","code"],["eas","Expo EAS","Builds","rocket"],["paystack","Paystack","Payments","card"],["flutterwave","Flutterwave","Payments","card"],["slack","Slack","Notifications","chat"],["intercom","Intercom","Live chat","chat"],["hubspot","HubSpot","CRM contact","users"],["zendesk","Zendesk","Support desk","mail"],["whatsapp","WhatsApp Business","Contact","chat"]];
 const STG=["Bundling web assets","Packaging native shell","Signing"];
-const NAV=[["overview","Overview","home"],["room","My room","door"],["g","Build"],["projects","Projects","cube"],["builds","Builds","rocket"],["g","Create"],["diffusion","Diffusion","palette"],["g","Research"],["research","Research","spark"],["seo","SEO & growth","trend"],["g","Auxa Cloud"],["drive","Drive","folder"],["conn","Connections","plug"],["g","Auxobus"],["tools","All tools","grid"],["qa","Quality test lab","bolt"],["flows","Platform flow lab","grid"],["story","Storytelling","spark"],["site","Site builder","grid"],["g","Connect"],["webhooks","Webhooks","link"],["mcp","MCP","net"],["api","API","term"],["g","Workspace"],["team","Team","users"],["billing","Billing","card"]];
+const NAV=[["overview","Overview","home"],["room","My room","door"],["g","Build"],["projects","Projects","cube"],["builds","Builds","rocket"],["g","Create"],["diffusion","Diffusion","palette"],["g","Research"],["research","Research","spark"],["seo","SEO & growth","trend"],["g","Auxa Cloud"],["drive","Drive","folder"],["conn","Connections","plug"],["g","Auxobus"],["tools","All tools","grid"],["story","Storytelling","spark"],["site","Site builder","grid"],["g","Labs"],["qa","Quality test lab","bolt"],["flows","Platform flow lab","grid"],["g","Connect"],["webhooks","Webhooks","link"],["mcp","MCP","net"],["api","API","term"],["g","Workspace"],["team","Team","users"],["billing","Billing","card"]];
 
 /* ================= helpers ================= */
 const fmt=b=>b>=1e9?(b/1e9).toFixed(1)+" GB":b>=1e6?(b/1e6).toFixed(1)+" MB":Math.max(1,Math.round(b/1e3))+" KB";
@@ -1148,7 +1177,7 @@ async function previewFile(f){
   } else {
     body=`<div class="big-skip"><b>${esc(name)}</b><p class="sub">${k.toUpperCase()} · ${fmt(size)} — binary or unsupported preview</p><button class="btn s mt" data-a="downloadOne" data-x="${F.indexOf(f)}">Download</button></div>`;
   }
-  modal("Preview · "+esc(name), `<div class="file-preview">${body}</div><div class="pa mt"><button class="btn g" data-a="close">Close</button><button class="btn" data-a="downloadOne" data-x="${F.indexOf(f)}">Download</button></div>`);
+  modal("Preview · "+esc(name), `<div class="file-preview">${body}</div><div class="pa mt" style="padding:0 18px 18px"><button class="btn g" data-a="close">Close</button><button class="btn" data-a="downloadOne" data-x="${F.indexOf(f)}">Download</button></div>`, null, "full");
 }
 function driveHTML(base,rootName){const cf=M.fid||null,q=(M.dq||"").toLowerCase(),view=M.dv||"grid",fo=D.folders.filter(f=>(f.parent||null)==cf&&f.n.toLowerCase().includes(q)),fl=F.filter(f=>(f.folder||null)==cf&&f.name.toLowerCase().includes(q)),pth=path(cf),sub=pth.slice(base?pth.findIndex(x=>x.id==base)+1:0);
  const cr=`<div class="crumbs"><button data-a="crumb" data-x="${base||"root"}">${esc(rootName)}</button>${sub.map((x,i)=>`<span class="sep">/</span>${i==sub.length-1?`<b>${esc(x.n)}</b>`:`<button data-a="crumb" data-x="${x.id}">${esc(x.n)}</button>`}`).join("")}</div>`;
@@ -1157,7 +1186,7 @@ function driveHTML(base,rootName){const cf=M.fid||null,q=(M.dq||"").toLowerCase(
   <div class="drive-toolbar">
     <div class="drive-search"><svg class="i"><use href="#search"/></svg><input class="inp" id="dq" placeholder="Search in Drive" value="${esc(M.dq||"")}"></div>
     <div class="seg drive-seg"><button class="${view=="grid"?"on":""}" data-a="dview" data-x="grid" aria-label="Grid">${ic("grid")}</button><button class="${view=="list"?"on":""}" data-a="dview" data-x="list" aria-label="List">${ic("rows")}</button></div>
-    <div class="drive-actions"><button class="btn g s" data-a="newFolder">${ic("plus")}Folder</button><button class="btn g s" data-a="newProject">${ic("cube")}Project</button><button class="btn s" data-a="upload">${ic("up")}Upload</button></div>
+    <div class="drive-actions"><button class="btn g s" data-a="newFolder">${ic("plus")}New</button><button class="btn g s" data-a="newProject">${ic("cube")}Project</button><button class="btn s" data-a="upload">${ic("up")}Upload</button></div>
   </div>
 </div>`;
  const thumb=f=>f instanceof Blob?(f._u||(f._u=URL.createObjectURL(f))):f.url;
@@ -1203,7 +1232,7 @@ function widgetHTML(r,w){const d=w.data,id=w.id;let b="";
  else if(w.type=="connect"){const ids=d.ids||[];b=(ids.length?ids.map(id=>{const c=CONN.find(x=>x[0]==id);return c?`<div class="row" style="padding:7px 0">${tile(c[3])}<div class="t"><b>${c[1]}</b><span>${c[2]}</span></div>${D.cn[id]?`<span class="chip ok">on</span>`:`<button class="btn g s" data-a="conn" data-x="${id}">Connect</button>`}</div>`:""}).join(""):`<p class="sub">No connections pinned.</p>`)+`<button class="btn g s mt" data-a="go" data-x="conn">Manage connections</button>`}
  else if(w.type=="stamp"){b=`<div style="display:flex;align-items:center;gap:12px;padding:10px 0"><span style="display:inline-flex;align-items:center;justify-content:center;min-width:88px;padding:10px 14px;border:2px dashed ${esc(d.color||"#46c37b")};border-radius:12px;color:${esc(d.color||"#46c37b")};font:700 .78rem var(--display);letter-spacing:.04em;text-transform:uppercase">${esc(d.label||"Stamp")}</span><div class="t"><b>${d.mode==="api"?"API generated":"User stamp"}</b><span>By ${esc(d.by||"User")}</span></div></div><p class="sub">Marks user vs API-generated sections on PDF templates.</p><button class="btn g s mt" data-a="go" data-x="tool" data-y="document-pdf">Open PDF tool</button>`}
  else if(w.type=="stats"){const map={runs:["Tool runs · 7d",D.runs.filter(x=>x.ts>Date.now()-7*864e5).length],files:["Drive files",F.length],projects:["Projects",D.projects.length],gens:["Diffusion",D.gens.length],builds:["Builds",D.builds.length],conn:["Connections",Object.keys(D.cn||{}).filter(k=>D.cn[k]).length]};const keys=d.keys||["runs","files","projects","gens"];b=`<div class="room-stats" style="margin:0">${keys.map(k=>{const m=map[k]||[k,0];return`<div class="room-stat"><span>${m[0]}</span><b>${m[1]}</b></div>`}).join("")}</div>`}
- else if(w.type=="ubs"){const items=(d.items||[]).slice(0,4);b=items.length?`<div class="room-ubs" style="margin:0">${items.map(it=>`<button class="duc" type="button" data-a="go" data-x="${esc(it.x||"overview")}" aria-label="${esc(it.l||"")}"><div class="uin" style="background:${esc(it.bg||"#121212")}"><span class="usc"></span>${ic(it.ic||"grid","uic")}<span class="ulb">${esc(it.l||"")}</span></div><span class="udot">${ic("arrow")}</span></button>`).join("")}</div>`:`<p class="sub">No cards yet. Configure this widget.</p>`}
+ else if(w.type=="ubs"){const items=(d.items||[]).slice(0,4);b=items.length?`<div class="stat-row" style="margin:0">${items.map(it=>`<button class="stat-card" type="button" data-a="go" data-x="${esc(it.x||"overview")}"><span class="stat-label">${esc(it.l||"Item")}</span><b class="stat-num">${esc(it.stat||"—")}</b><span class="stat-sub">${esc(it.x||"open")}</span></button>`).join("")}</div>`:`<p class="sub">No cards yet. Configure this widget.</p>`}
  const ctl=M.redit?`<span style="display:flex;gap:2px"><button class="ib" data-a="moveW" data-x="${id}" data-y="-1" aria-label="Move earlier">${ic("back")}</button><button class="ib" data-a="moveW" data-x="${id}" data-y="1" aria-label="Move later">${ic("fwd")}</button><button class="ib" data-a="spanW" data-x="${id}" aria-label="Resize">${ic("grid")}</button><button class="ib" data-a="cfgW" data-x="${id}" aria-label="Configure">${ic("sliders")}</button><button class="ib" data-a="delW" data-x="${id}" aria-label="Remove widget">${ic("trash")}</button></span>`:"";
  return`<div class="w ${w.span==2?"s2":""} ${M.redit?"edit":""}" style="--ac:${r.accent}"><div class="wh"><i class="ac"></i><b>${esc(w.title)}</b>${ctl}</div>${b}</div>`}
 
@@ -1267,16 +1296,19 @@ function siteApplyTemplate(key){
 }
 function siteHubHTML(){
   const sites=D.projects.filter(p=>p.kind==="web"||p.kind==="site");
-  return `<div class="site-hub">
-    <h2>Site builder</h2>
-    <p class="sub">Configure, pick a template, then edit. Each site is a project in Drive.</p>
-    <button type="button" class="btn" data-a="siteStartNew">${ic("plus")}New site</button>
+  return `<div class="site-hub" style="max-width:720px;margin:0 auto;padding:24px 16px">
+    <h2>Create a site</h2>
+    <p class="sub">Start from a template or open an existing site. Sections, buttons, and actions are edited visually.</p>
+    <div class="stat-row" style="margin:16px 0">
+      <button class="stat-card" type="button" data-a="siteStartNew"><span class="stat-label">New site</span><b class="stat-num">+</b><span class="stat-sub">Guided setup</span></button>
+      <button class="stat-card" type="button" data-a="sitePhase" data-x="setup"><span class="stat-label">Templates</span><b class="stat-num">${(siteTemplates?siteTemplates():[]).length||4}</b><span class="stat-sub">Ready to use</span></button>
+    </div>
     <div class="site-list">
       ${sites.length?sites.map(p=>`<button type="button" class="site-list-item" data-a="siteOpenProject" data-x="${p.id}">
         <b>${esc(p.n)}</b><span class="sub">${esc(p.template||"site")} · ${ago(p.created||Date.now())}</span>
-      </button>`).join(""):`<p class="sub">No sites yet. Start a new one.</p>`}
+      </button>`).join(""):`<p class="sub">No sites yet. Start a new one above.</p>`}
     </div>
-    <button type="button" class="btn g s" data-a="closeSite">Close</button>
+    <button type="button" class="btn g s mt" data-a="closeSite">Close</button>
   </div>`;
 }
 function siteSetupHTML(){
@@ -1604,74 +1636,28 @@ const VW={
 overview(){const nx=nextAction(),S=STAGES(),all=S.flatMap(x=>x.t),done=all.filter(t=>t[1]()).length,hr=new Date().getHours(),gr=hr<12?"Good morning":hr<18?"Good afternoon":"Good evening",R=RANGE,days=Array.from({length:R},(_,i)=>dkey(Date.now()-(R-1-i)*864e5)),ser={act:days.map(d=>D.act[d]||0),runs:days.map(d=>D.runs.filter(r=>dkey(r.ts)==d).length),dlv:days.map(d=>D.deliveries.filter(x=>dkey(x.ts)==d).length)},mt=M.ov||"act",sum=a=>a.reduce((x,y)=>x+y,0),runs30=D.runs.filter(r=>r.ts>Date.now()-30*864e5).length,pr=PL[D.plan],um=(l,v,pc)=>`<div style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;font-size:.86rem"><span>${l}</span><span class="sub">${v}</span></div><div class="meter"><i style="width:${Math.min(100,pc)}%"></i></div></div>`;
 const QA=[["card","Create an invoice",{a:"go",x:"tool",y:"document-pdf"}],["file","Sign a PDF",{a:"go",x:"tool",y:"sign-pdf"}],["spark","Test an idea",{a:"go",x:"research"}],["palette","Train an AI model",{a:"go",x:"diffusion"}],["grid","Build a page",{a:"go",x:"tool",y:"site-builder"}],["up","Upload files",{a:"upload"}],["door","Open my room",{a:"go",x:"room"}]];
 return `<div class="ov-head"><div class="ov-head-text"><span class="ov-kicker">${esc(D.profile.name&&D.profile.name!=="Your name"?D.profile.name.split(" ")[0]:"There")}</span><h1>${gr}</h1><p class="ov-sub">Your desk for projects and tools.</p></div><button class="btn" data-a="addMenu">${ic("plus")}Add</button></div>`+`
-<div class="dub-wrap"><div class="dub-blobs" aria-hidden="true"><i class="db db1"></i><i class="db db2"></i></div><div class="dub">
-  <div class="duc vid" aria-label="Workspace preview">
-    <div class="uin">
-      <div class="um" data-ov="video" data-video="https://webeverlabs.com/assets/preview.mp4">
-        <canvas></canvas>
-        <video muted loop playsinline preload="auto"></video>
-      </div>
-      <span class="usc"></span>
-    </div>
-  </div>
-  <button class="duc" type="button" data-a="go" data-x="projects" aria-label="Projects">
-    <div class="uin" style="background:#0a0c12">
-      <div class="um" data-ov="mesh"><canvas></canvas></div>
-      <span class="usc"></span>
-      ${ic("cube","uic")}
-      <span class="ulb">Projects</span>
-    </div>
-    <span class="udot">${ic("arrow")}</span>
+<div class="stat-row">
+  <button class="stat-card" type="button" data-a="go" data-x="projects">
+    <span class="stat-label">Projects</span>
+    <b class="stat-num">${D.projects.length}</b>
+    <span class="stat-sub">grouped services</span>
   </button>
-  <button class="duc" type="button" data-a="go" data-x="research" aria-label="Research">
-    <div class="uin" style="background:#0a0c14">
-      <div class="um" data-ov="agent"><canvas></canvas></div>
-      <span class="usc"></span>
-      ${ic("spark","uic")}
-      <span class="ulb">Research</span>
-    </div>
-    <span class="udot">${ic("arrow")}</span>
+  <button class="stat-card" type="button" data-a="go" data-x="drive">
+    <span class="stat-label">Drive</span>
+    <b class="stat-num">${F.length}</b>
+    <span class="stat-sub">files</span>
   </button>
-  <button class="duc" type="button" data-a="go" data-x="diffusion" aria-label="Diffusion">
-    <div class="uin" style="background:#0c0a08">
-      <div class="um" data-ov="glow"><canvas></canvas></div>
-      <span class="usc"></span>
-      ${ic("palette","uic")}
-      <span class="ulb">Diffusion</span>
-    </div>
-    <span class="udot">${ic("arrow")}</span>
+  <button class="stat-card" type="button" data-a="go" data-x="tools">
+    <span class="stat-label">Tools</span>
+    <b class="stat-num">${TOOLS.length}</b>
+    <span class="stat-sub">ready</span>
   </button>
-</div></div>
-<div class="ads-row" id="adsRow">
-  <button class="ad-card ad-connect" type="button" data-a="go" data-x="conn" data-ad="connect">
-    <span class="ad-glow" aria-hidden="true"></span>
-    <span class="ad-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
-    <div class="ad-copy">
-      <img class="ad-logo" src="https://webeverlabs.com/assets/logo.png" alt="" width="26" height="26">
-      <b>Connect With Us</b>
-      <span>Our Social Handles ›</span>
-    </div>
-    <div class="ad-art" aria-hidden="true">
-      <svg class="ad-globe-svg" viewBox="0 0 120 120" width="100" height="100">
-        <!-- vertical half globe of dots -->
-        <g fill="rgba(255,255,255,.85)">
-          <circle cx="60" cy="12" r="2.2"/><circle cx="72" cy="16" r="2"/><circle cx="48" cy="16" r="2"/>
-          <circle cx="82" cy="28" r="2.2"/><circle cx="60" cy="26" r="2.4"/><circle cx="38" cy="28" r="2.2"/>
-          <circle cx="90" cy="42" r="2"/><circle cx="74" cy="40" r="2.2"/><circle cx="60" cy="42" r="2.4"/><circle cx="46" cy="40" r="2.2"/><circle cx="30" cy="42" r="2"/>
-          <circle cx="96" cy="58" r="1.8"/><circle cx="82" cy="56" r="2.2"/><circle cx="68" cy="58" r="2.4"/><circle cx="52" cy="58" r="2.4"/><circle cx="38" cy="56" r="2.2"/><circle cx="24" cy="58" r="1.8"/>
-          <circle cx="98" cy="74" r="1.6"/><circle cx="86" cy="72" r="2"/><circle cx="72" cy="74" r="2.2"/><circle cx="60" cy="76" r="2.4"/><circle cx="48" cy="74" r="2.2"/><circle cx="34" cy="72" r="2"/><circle cx="22" cy="74" r="1.6"/>
-          <circle cx="92" cy="90" r="1.8"/><circle cx="78" cy="92" r="2"/><circle cx="64" cy="94" r="2.2"/><circle cx="56" cy="94" r="2.2"/><circle cx="42" cy="92" r="2"/><circle cx="28" cy="90" r="1.8"/>
-          <circle cx="84" cy="106" r="1.5"/><circle cx="70" cy="108" r="1.8"/><circle cx="60" cy="110" r="2"/><circle cx="50" cy="108" r="1.8"/><circle cx="36" cy="106" r="1.5"/>
-        </g>
-      </svg>
-    </div>
+  <button class="stat-card" type="button" data-a="go" data-x="research">
+    <span class="stat-label">Research</span>
+    <b class="stat-num">${(D.briefs||[]).length}</b>
+    <span class="stat-sub">briefs</span>
   </button>
-  <button class="ad-card ad-release" type="button" data-a="go" data-x="tool" data-y="storytelling" data-ad="release"><span class="ad-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
-    <img class="ad-logo" src="https://webeverlabs.com/assets/logo.png" alt="" width="22" height="22">
-    <div class="ad-copy"><b>New<br>Release</b><span>Color grade &amp; storyboard ›</span></div>
-    <span class="ad-badge">NEW</span>
-  </button>
-</div></div>
+</div>
 <div class="cols"><div class="stack"><div class="pn"><div class="ph2"><h3>Analytics</h3><div class="pa">${[7,14,30].map(n=>`<button class="pill ${RANGE==n?"on":""}" data-a="range" data-x="${n}">${n}d</button>`).join("")}</div></div><div class="mtabs">${[["act","Activity"],["runs","Tool runs"],["dlv","Deliveries"]].map(([k,l])=>`<button class="${mt==k?"on":""}" data-a="ovm" data-x="${k}"><span>${l}</span><b>${sum(ser[k])}</b></button>`).join("")}</div><div class="pb">${sum(ser[mt])?line(ser[mt]):em("No data yet","Numbers appear as you use Auxobus.")}</div></div>
 <div class="pn"><div class="ph2"><h3>Projects</h3><button class="btn g s" data-a="go" data-x="projects">View all</button></div>${tbl(["Name","Build","Assets","Updated"],D.projects.slice(0,5).map(q=>{const b=D.builds.find(x=>x.p==q.id);return[`<button class="nm" data-a="openProject" data-x="${q.id}" style="display:flex;gap:10px;align-items:center;text-align:left">${tile("folder","#0d4a5c")}${esc(q.n)}</button>`,b?bChip(b):`<span class="chip">none</span>`,fmt(fsz(q.folder)),ago(q.created||Date.now())]}),em("No projects yet","Create one to get a build pipeline and an assets folder.",`<button class="btn s" data-a="newProject">New project</button>`))}</div>
 ${done<all.length?`<div class="pn"><div class="ph2"><h3>Get started</h3><span class="chip">${done} of ${all.length}</span></div><div class="pb">${all.map(t=>`<div class="tk ${t[1]()?"on":""}"><span class="bx">${t[1]()?ic("check"):""}</span><span class="tt">${t[0]}</span>${t[1]()?"":`<button class="btn g s" ${act(t[2])}>Start</button>`}</div>`).join("")}</div></div>`:""}</div>
@@ -1706,7 +1692,10 @@ drive(){return ph("Drive","")+driveHTML(null,"My Drive")},
 
 conn(){return ph("Connections","")+`<div class="card">${CONN.map(c=>`<div class="row">${tile(c[3])}<div class="t"><b>${c[1]}</b><span>${c[2]}</span></div>${D.cn[c[0]]?`<span class="chip ok">connected</span>`:""}<button class="btn ${D.cn[c[0]]?"g":""} s" data-a="conn" data-x="${c[0]}">${D.cn[c[0]]?"Disconnect":"Connect"}</button></div>`).join("")}</div><p class="sub mt">${server()?"":"Local mode records the toggle only."}</p>`},
 
-tools(){const q=(M.tq||"").toLowerCase(),l=TOOLS.filter(t=>(t.name+t.desc+(SD[t.id]||"")).toLowerCase().includes(q));return ph("Tools","Each tool also works by webhook and MCP.",`<input class="inp" id="tq" placeholder="Search tools" value="${esc(M.tq||"")}" style="width:240px">`)+(CATS.map(c=>{const g=l.filter(t=>t.cat==c);return g.length?`<div class="sech">${c}</div><div class="ct">${g.map(t=>`<button class="ctl" data-a="go" data-x="tool" data-y="${t.id}">${tile(t.icon,t.t)}<span class="t"><b>${t.name}</b><span>${SD[t.id]||t.desc}</span></span></button>`).join("")}</div>`:""}).join("")||em("No tools match","Try another search."))},
+tools(){const q=(M.tq||"").toLowerCase(),l=TOOLS.filter(t=>(t.name+t.desc+(SD[t.id]||"")).toLowerCase().includes(q));
+const labs=[{id:"qa",n:"Quality test lab",d:"Security probes and stress tests",ic:"bolt"},{id:"flows",n:"Platform flow lab",d:"Visual system builder with API ports",ic:"grid"}];
+const labsHTML=`<div class="sech">Labs</div><div class="ct">${labs.map(t=>`<button class="ctl" data-a="go" data-x="${t.id}">${tile(t.ic)}<span class="t"><b>${t.n}</b><span class="sub">${t.d}</span></span></button>`).join("")}</div>`;
+return ph("Tools","Each tool also works by webhook and MCP.",`<input class="inp" id="tq" placeholder="Search tools" value="${esc(M.tq||"")}" style="width:240px">`)+labsHTML+(CATS.map(c=>{const g=l.filter(t=>t.cat==c);return g.length?`<div class="sech">${c}</div><div class="ct">${g.map(t=>`<button class="ctl" data-a="go" data-x="tool" data-y="${t.id}">${tile(t.icon,t.t)}<span class="t"><b>${t.name}</b><span>${SD[t.id]||t.desc}</span></span></button>`).join("")}</div>`:""}).join("")||em("No tools match","Try another search."))},
 
 
 tool(){const t=toolOf(M.tid);if(!t)return ph("Tool","Missing tool.")+em("Not found","Pick a tool from the list.",`<button class="btn" data-a="go" data-x="tools">Tools</button>`);
@@ -1818,33 +1807,40 @@ VW.qa=function(){
   </div>`;
 };
 VW.flows=function(){
-  const steps=M.flowSteps||[{id:"s1",name:"Create resource",method:"POST",path:"/api/resource",type:"action"},{id:"s2",name:"Notify",method:"POST",path:"/api/notify",type:"action"}];
-  return ph("Platform flow lab","Design workflow steps for the platform you are building. Export API sketches usable from Site builder events/actions.",
-    `<button class="btn s" data-a="flowAdd">Add step</button><button class="btn g s" data-a="flowExport">Export API code</button>`)+`
-  <div class="grid">
-    <div class="card c6">
-      <label class="f">Workflow name</label>
-      <input class="inp" id="fl_name" value="${esc(M.flowName||"My platform flow")}">
-      <div class="mt" id="fl_steps">
-        ${steps.map((s,i)=>`<div class="flow-step">
-          <b style="width:28px">${i+1}</b>
-          <input class="inp" data-a="flowField" data-x="${i}" data-k="name" value="${esc(s.name)}" style="flex:1" placeholder="Step name">
-          <select class="inp" data-a="flowField" data-x="${i}" data-k="method" style="width:100px">
-            ${["GET","POST","PUT","PATCH","DELETE"].map(m=>`<option ${s.method===m?"selected":""}>${m}</option>`).join("")}
+  const nodes=M.flowNodes||[
+    {id:"n1",label:"User signup",kind:"trigger",api:false},
+    {id:"n2",label:"Create profile",kind:"action",api:true},
+    {id:"n3",label:"Send welcome",kind:"action",api:false}
+  ];
+  const kinds=["trigger","action","data","condition","output"];
+  return ph("Platform flow lab","Visually construct systems. Mark any node as an API port, then export it for Site builder button actions.",
+    `<button class="btn s" data-a="flowAddNode">Add node</button><button class="btn g s" data-a="flowExportPort">Export selected ports</button>`)+`
+  <div class="flow-canvas">
+    <div class="flow-nodes">
+      ${nodes.map((n,i)=>`<div class="flow-node ${n.api?"api":""}" data-id="${n.id}">
+        <div class="flow-node-hd">
+          <select class="inp" data-a="flowNodeField" data-x="${i}" data-k="kind" style="width:110px">
+            ${kinds.map(k=>`<option ${n.kind===k?"selected":""}>${k}</option>`).join("")}
           </select>
-          <input class="inp" data-a="flowField" data-x="${i}" data-k="path" value="${esc(s.path||"")}" style="flex:1.2" placeholder="/api/...">
-          <button class="ib" data-a="flowDel" data-x="${i}" aria-label="Remove">${ic("x")}</button>
-        </div>`).join("")}
-      </div>
-      <button class="btn mt" data-a="flowValidate" style="width:100%">Validate & sketch APIs</button>
+          <input class="inp" data-a="flowNodeField" data-x="${i}" data-k="label" value="${esc(n.label)}" placeholder="Node name" style="flex:1">
+          <label class="chk" style="margin:0"><input type="checkbox" data-a="flowNodeApi" data-x="${i}" ${n.api?"checked":""}> API port</label>
+          <button class="ib" data-a="flowDelNode" data-x="${i}" aria-label="Remove">${ic("x")}</button>
+        </div>
+        <div class="flow-node-body">
+          <span class="chip">${n.kind}</span>
+          ${n.api?`<span class="chip ok">port</span>`:""}
+        </div>
+      </div>`).join("")}
     </div>
-    <div class="card c6">
-      <h3>API sketch</h3>
-      <p class="sub">Paste into your backend or wire as Site builder action handlers.</p>
-      <div class="cb"><pre id="fl_out">${esc(M.flowOut||"// Validate to generate route sketches")}</pre><button class="ib" data-a="copyText" data-x="fl_out">${ic("copy")}</button></div>
+    <div class="flow-side">
+      <h3>Export for Site builder</h3>
+      <p class="sub">Select nodes marked as API ports. These become request actions you can connect to buttons in the site editor.</p>
+      <div class="out" id="flow_ports">${esc(M.flowPortsOut||"Mark nodes as API ports, then export.")}</div>
+      <button class="btn mt" data-a="flowExportPort" style="width:100%">Export ports</button>
     </div>
   </div>`;
 };
+
 function briefHTML(b){const d=b.d,li=a=>`<ul style="margin:8px 0 0 18px;display:flex;flex-direction:column;gap:5px">${(a||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;return`<div class="ph" style="margin-bottom:10px"><div><h3 style="font-size:1.3rem">${esc(d.title)}</h3><p class="sub">${esc(b.q)}</p></div><button class="btn g s" data-a="expBrief" data-x="${b.id}">${ic("dl")}Export</button></div><p>${esc(d.summary)}</p>${(d.market_snapshot||[]).map(m=>`<div class="row"><div class="t"><b>${esc(m.label)}</b><span style="white-space:normal">${esc(m.detail)}</span></div></div>`).join("")}<h4 class="mt">Opportunities</h4>${li(d.opportunities)}<h4 class="mt">Risks</h4>${li(d.risks)}<h4 class="mt">First steps</h4>${li(d.first_steps)}<h4 class="mt">Where to verify</h4>${li(d.search_directions)}`}
 function formHTML(t){return t.in.map(f=>{const id="f_"+f.k;let c;if(f.t=="file"||f.t=="files")c=`<div class="chips" id="${id}">${chips(f)}</div><button class="btn g s mt" data-a="devUp" data-x="${f.k}">${ic("up")}Add from device</button>`;else if(f.t=="area")c=`<textarea class="inp" id="${id}" placeholder="${esc(f.ph||"")}">${esc(f.def||"")}</textarea>`;else if(f.t=="sel")c=`<select class="inp" id="${id}">${f.opts.map(o=>`<option ${o==f.def?"selected":""}>${o}</option>`).join("")}</select>`;else if(f.t=="range")c=`<input type="range" id="${id}" min="${f.min}" max="${f.max}" value="${f.def}" oninput="this.nextElementSibling.textContent=this.value"><span class="sub">${f.def}</span>`;else if(f.t=="bool")c=`<label class="sw"><input type="checkbox" id="${id}" ${f.def?"checked":""}><i></i></label>`;else c=`<input class="inp" id="${id}" type="${f.t=="num"?"number":"text"}" value="${esc(f.def??"")}" placeholder="${esc(f.ph||"")}">`;return`<div class="fw"${f.w?` data-w="${f.w}"`:""}><label class="f">${f.l}${f.req?" *":""}</label>${c}</div>`}).join("")}
 function applyWhen(){$$(".fw[data-w]").forEach(w=>{const[k,vs]=w.dataset.w.split(":"),e=$("#f_"+k);w.style.display=e&&vs.split("|").includes(e.value)?"":"none"})}
@@ -2628,6 +2624,23 @@ A.flowValidate=async()=>{
 };
 A.flowExport=()=>{if(!M.flowOut)return toast("Validate first",0);const b=new Blob([M.flowOut],{type:"text/plain"});addFiles([new File([b],(M.flowName||"flow").replace(/\s+/g,"-")+".api.js",{type:"text/javascript"})]);toast("Saved API sketch to Drive")};
 A.copyText=(id)=>{const el=document.getElementById(id);if(!el)return;navigator.clipboard.writeText(el.textContent||"").then(()=>toast("Copied")).catch(()=>toast("Copy failed",0))};
+
+
+A.flowAddNode=()=>{const n=M.flowNodes||(M.flowNodes=[]);n.push({id:rid(4),label:"New node",kind:"action",api:false});render()};
+A.flowDelNode=(i)=>{const n=M.flowNodes||[];n.splice(+i,1);render()};
+A.flowNodeField=(i,el)=>{const n=(M.flowNodes||[])[+i];if(!n||!el)return;n[el.dataset.k]=el.value;render()};
+A.flowNodeApi=(i,el)=>{const n=(M.flowNodes||[])[+i];if(!n)return;n.api=el.checked;render()};
+A.flowExportPort=()=>{
+  const ports=(M.flowNodes||[]).filter(n=>n.api);
+  if(!ports.length){toast("Mark at least one node as an API port",0);return}
+  const sketch=ports.map(p=>`// Port: ${p.label} (${p.kind})\n// Connect a Site builder button action to request this endpoint\nPOST /api/flow/${p.id}\nbody: { node: "${p.label}", kind: "${p.kind}" }`).join("\n\n");
+  M.flowPortsOut=sketch;
+  // Also save as file in Drive for site builder to pick up
+  const b=new Blob([sketch],{type:"text/plain"});
+  addFiles([new File([b],"flow-ports.txt",{type:"text/plain"})]);
+  render();
+  toast("Ports exported — connect buttons in Site builder to these requests");
+};
 
 A.signout=()=>WV.logout();
 ensureFolders();seedRooms();shell();render();API.load().then(()=>{ensureFolders();seedRooms();shell();render()});
